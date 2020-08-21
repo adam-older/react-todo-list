@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Todos from './components/Todos';
+import Todos from './components/todo-components/Todos';
+import Header from './components/Header';
 
 import './App.css';
 
@@ -32,10 +33,19 @@ export default class App extends Component {
       return todo;
     })})
 }
+
+  delTodo = (id) => {
+    this.setState({ todos: this.state.todos.filter(todo => {
+      if (todo.id !== id) return todo;
+    })})
+  }
   render() {
     return (
       <div className="App">
-        <Todos todos={this.state.todos} toggleComplete={this.toggleComplete}/>
+        <div className="container">
+          <Header />
+          <Todos todos={this.state.todos} toggleComplete={this.toggleComplete} delTodo={this.delTodo} />
+        </div>
       </div>
     )
   }
