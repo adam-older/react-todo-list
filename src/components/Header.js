@@ -11,5 +11,6 @@ export default function Header() {
 const headerStyle = {
     textAlign: 'center',
     color: 'white',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    padding: '10px'
 }
