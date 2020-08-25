@@ -39,7 +39,8 @@ export default class App extends Component {
 
   delTodo = (id) => {
     this.setState({ todos: [...this.state.todos.filter(todo => {
-      if (todo.id !== id) return todo;
+      // if (todo.id !== id) return todo;
+      return todo.id !== id;
     })] });
   }
   submitTodo = (title) => {
