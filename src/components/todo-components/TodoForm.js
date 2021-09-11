@@ -12,7 +12,9 @@ export class TodoForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.submitTodo(this.state.title);
+        if (this.state.title) {
+            this.props.submitTodo(this.state.title);
+        }
         this.setState({ title: '' });
     }
 
